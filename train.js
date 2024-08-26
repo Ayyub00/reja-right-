@@ -1,3 +1,96 @@
+// Task D
+function checksimilarity(word1, word2) {
+  let sorted1 = word1.split("").sort().join("");
+  let sorted2 = word2.split("").sort().join("");
+
+  if (sorted1 === sorted2) {
+    return true;
+  }
+  return false;
+}
+console.log(checksimilarity("mit", "mit"));
+
+// const moment = require("moment");
+
+// class Shop {
+//   constructor(pizza, burger, pepsi) {
+//     this.inventory = {
+//       pizza: pizza,
+//       burger: burger,
+//       pepsi: pepsi,
+//     };
+//   }
+
+//   getTime() {
+//     return moment().format("HH:mm");
+//   }
+
+//   qoldiq() {
+//     const { pizza, burger, pepsi } = this.inventory;
+//     return `Hozir ${this.getTime()} da sizda ${pizza} ta pizza va ${burger} ta burger va ${pepsi} ta pepsi bor.`;
+//   }
+
+//   sotish(nomi, soni) {
+//     if (!(nomi in this.inventory)) {
+//       return "Mahsulot mavjud emas";
+//     }
+
+//     if (this.inventory[nomi] === 0) {
+//       return `${nomi.charAt(0).toUpperCase() + nomi.slice(1)} qolmadi`;
+//     }
+
+//     if (this.inventory[nomi] < soni) {
+//       return `Bunday miqdorda ${nomi} mavjud emas`;
+//     }
+
+//     this.inventory[nomi] -= soni;
+//     return `Hozir ${this.getTime()} da ${soni} ${nomi} oldingiz!`;
+//   }
+
+//   qabul(nomi, soni) {
+//     if (!(nomi in this.inventory)) {
+//       return "Mahsulot mavjud emas";
+//     }
+
+//     this.inventory[nomi] += soni;
+//     return `Hozir ${this.getTime()} da ${soni} ${nomi} qabul qildingiz!`;
+//   }
+// }
+
+// // Example usage:
+// const story = new Shop(18, 22, 50);
+// console.log(story.qoldiq());
+// console.log(story.qabul("burger", 10));
+// console.log(story.qoldiq());
+
+// // TASK B
+// function countDigits(str) {
+//   let count = 0;
+//   for (let i = 0; i < str.length; i++) {
+//     if (!isNaN(str[i])) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+// console.log(countDigits("shh32r42"));
+
+// //   A TASK
+// function atask(w, word) {
+//     let count = 0;
+
+//     for (const char of word) {
+//       if (char === w) {
+//         count++;
+//       }
+//     }
+
+//     return count;
+//   }
+
+//   console.log(atask("w", "wolf or wolverine"));
+
 // console.log("Jack Ma maslahatlari");
 // const list = [
 //   "yaxshi talaba boling", // 0-20
@@ -53,99 +146,24 @@
 //   }
 // }
 
-// // call via then/catch
-// console.log("passed here 0");
-// maslahatbering(25)
-//   .then((data) => {
-//     console.log("javob:", data);
-//   })
-//   .catch((err) => {
-//     console.log("ERROR", err);
-//   });
-// console.log("passed here 1");
+// // // call via then/catch
+// // console.log("passed here 0");
+// // maslahatbering(25)
+// //   .then((data) => {
+// //     console.log("javob:", data);
+// //   })
+// //   .catch((err) => {
+// //     console.log("ERROR", err);
+// //   });
+// // console.log("passed here 1");
 
 // // asyn/await
 // async function run() {
 //   let javob = await maslahatBering(65);
 //   console.log(javob);
-//   javob = await maslahatBering(70);
-//   console.log(javob);
-//   javob = await maslahatBering(45);
-//   console.log(javob);
+//   // javob = await maslahatBering(70);
+//   // console.log(javob);
+//   // javob = await maslahatBering(45);
+//   // console.log(javob);
 // }
 // run();
-
-//C-TASK
-
-const moment = require("moment");
-const time = moment().format("HH:mm");
-
-console.log("Bizda non, lagmon, cola bor");
-
-class Shop {
-  non;
-  cola;
-  lagmon;
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
-  }
-
-  qoldiq() {
-    `return Hozir ${time} da sizda ${this.non} ta non va ${this.lagmon} ta lagmon va ${this.cola} ta cola bor;`
-  }
-
-  sotish(nomi, soni) {
-    if (nomi === "non") {
-      if (this.non === 0) {
-        return "Non qolmadi";
-      } else if (this.non >= soni) {
-        this.non -= soni;
-        `return Hozir ${time} da  ${soni} non oldingiz!;`
-      } else {
-        return "Bunday miqdorda non mavjud emas";
-      }
-    } else if (nomi === "lagmon") {
-      if (this.lagmon === 0) {
-        return "Lagmon qolmadi";
-      } else if (this.lagmon >= soni) {
-        this.lagmon -= soni;
-        `return Hozir ${time} da  ${soni} lagmon oldingiz!;`
-      } else {
-        return "Bunday miqdorda lagmon mavjud emas";
-      }
-    } else if (nomi === "cola") {
-      if (this.cola === 0) {
-        return "Cola qolmadi";
-      } else if (this.cola >= soni) {
-        this.cola -= soni;
-        `return Hozir ${time} da  ${soni} cola oldingiz!;`
-      } else {
-        return "Bunday miqdorda cola mavjud emas";
-      }
-    } else {
-      return "Mahsulot mavjud emas";
-    }
-  }
-
-  qabul(nomi, soni) {
-    if (nomi === "non") {
-      this.non += soni;
-      `return Hozir ${time} da  ${soni} non qabul qildingiz!;`
-    } else if (nomi === "lagmon") {
-      this.lagmon += soni;
-      `return Hozir ${time} da  ${soni} lagmon qabul qildingiz!;`
-    } else if (nomi === "cola") {
-      this.cola += soni;
-      `return Hozir ${time} da  ${soni} cola qabul qildingiz!;`
-    } else {
-      return "Mahsulot mavjud emas";
-    }
-  }
-}
-
-const story = new Shop(23, 55, 7);
-console.log(story.qoldiq());
-console.log(story.qabul("lagmon", 10));
-console.log(story.qoldiq());
