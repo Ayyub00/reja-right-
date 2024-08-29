@@ -1,3 +1,13 @@
+// TASK E
+
+function checkContent(a) {
+  let array1 = a.split("").reverse().join("");
+    return array1;
+  }
+
+console.log(checkContent("mitgroup"));
+
+
 // Task D
 function checksimilarity(word1, word2) {
   let sorted1 = word1.split("").sort().join("");
