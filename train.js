@@ -1,24 +1,37 @@
-// TASK E
-
-function checkContent(a) {
-  let array1 = a.split("").reverse().join("");
-    return array1;
-  }
-
-console.log(checkContent("mitgroup"));
-
-
-// Task D
-function checksimilarity(word1, word2) {
-  let sorted1 = word1.split("").sort().join("");
-  let sorted2 = word2.split("").sort().join("");
-
-  if (sorted1 === sorted2) {
-    return true;
+// TASK-F
+function findDoublers(a) {
+  const checked = new Set();
+  for (const char of a) {
+    if (checked.has(char)) {
+      return true;
+    }
+    checked.add(char);
   }
   return false;
 }
-console.log(checksimilarity("mit", "mit"));
+console.log(findDoublers("hello"));
+
+// // TASK E
+
+// function checkContent(a) {
+//   let array1 = a.split("").reverse().join("");
+//     return array1;
+//   }
+
+// console.log(checkContent("mitgroup"));
+
+
+// // Task D
+// function checksimilarity(word1, word2) {
+//   let sorted1 = word1.split("").sort().join("");
+//   let sorted2 = word2.split("").sort().join("");
+
+//   if (sorted1 === sorted2) {
+//     return true;
+//   }
+//   return false;
+// }
+// console.log(checksimilarity("mit", "mit"));
 
 // const moment = require("moment");
 
